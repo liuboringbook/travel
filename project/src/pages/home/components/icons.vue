@@ -74,9 +74,10 @@
 </script>
 <style lang="stylus" scoped>
   @import '~@/assets/styles/mixins.styl'
- .icons
+  .icons
    overflow: hidden
    height: 0
+   margin-top: .1rem
    padding-bottom: 50%
    .icon
      position relative
