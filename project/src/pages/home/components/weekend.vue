@@ -2,14 +2,13 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom">
+      <li class="item border-bottom" v-for="item in weekendList" :key="item.id">
         <div class="item-img-wrapper">
-          <img src="" class="item-img">
+          <img :src="item.imgUrl" class="item-img">
         </div>
         <div class="item-info">
-          <p class="item-title">asssaasd</p>
-          <p class="item-desc">hahah</p>
-          <button class="item-button">查看详情</button>
+          <p class="item-title">{{item.title}}</p>
+          <p class="item-desc">{{item.desc}}</p>
         </div>
       </li>
     </ul>
@@ -18,11 +17,10 @@
 <script>
   export default{
       name: 'weekend',
-      data(){
-          return{
+      props:{
+        weekendList:Array
+      },
 
-          }
-      }
   }
 </script>
 <style lang="stylus" scoped>
@@ -32,4 +30,20 @@
     line-height: .8rem
     background: #eee
     text-indent: .2rem
+  .item-img-wrapper
+    overflow: hidden
+    height: 0
+    padding-bottom: 37.09%
+    .item-img
+      width: 100%
+  .item-info
+    padding: .1rem
+    .item-title
+      line-height: .54rem
+      font-size:.32rem
+      ellipses()
+    .item-desc
+      line-height .4rem
+      color: #ccc
+      ellipses()
 </style>

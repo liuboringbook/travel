@@ -14,6 +14,7 @@
 
 <script>
   export default{
+
   }
 </script>
 //scoped 样式只对当前组件有影响，对其他组件无影响

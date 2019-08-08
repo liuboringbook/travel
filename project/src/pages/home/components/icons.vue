@@ -1,61 +1,29 @@
 <template>
   <div class="icons">
-    <swiper>
-      <swiper-slide v-for="(page,index) of pages" :key="index">
-        <div class="icon" v-for="icon of page" :key="icon.id">
+    <swiper :options="swiperOption">
+      <swiper-slide v-for="(page,index) in pages" :key="index">
+        <div class="icon" v-for="icon in page" :key="icon.id">
           <div class="icon-img">
             <img class="icon-img-content" :src="icon.imgUrl" >
           </div>
           <div class="icon-desc">{{icon.desc}}</div>
         </div>
       </swiper-slide>
-
     </swiper>
   </div>
 </template>
 <script>
    export default{
        name: 'icons',
+     props:{
+       iconList:Array
+     },
      data(){
-           return {
-               iconList: [{
-                   id:'0001',
-                   imgUrl: 'https://imgs.qunarzz.com/p/tts7/1712/e8/b3726b2c912d2302.jpg_180x120_f95144d7.jpg',
-                   desc: '旅游景点'
-               },{
-                 id:'0002',
-                 imgUrl: 'https://imgs.qunarzz.com/p/tts7/1712/e8/b3726b2c912d2302.jpg_180x120_f95144d7.jpg',
-                 desc: '旅游景点'
-               },{
-                 id:'0003',
-                 imgUrl: 'https://imgs.qunarzz.com/p/tts7/1712/e8/b3726b2c912d2302.jpg_180x120_f95144d7.jpg',
-                 desc: '旅游景点'
-               },{
-                 id:'0004',
-                 imgUrl: 'https://imgs.qunarzz.com/p/tts7/1712/e8/b3726b2c912d2302.jpg_180x120_f95144d7.jpg',
-                 desc: '旅游景点'
-               },{
-                 id:'0005',
-                 imgUrl: 'https://imgs.qunarzz.com/p/tts7/1712/e8/b3726b2c912d2302.jpg_180x120_f95144d7.jpg',
-                 desc: '旅游景点'
-               },{
-                 id:'0006',
-                 imgUrl: 'https://imgs.qunarzz.com/p/tts7/1712/e8/b3726b2c912d2302.jpg_180x120_f95144d7.jpg',
-                 desc: '旅游景点旅游景点旅游景点'
-               },{
-                 id:'0007',
-                 imgUrl: 'https://imgs.qunarzz.com/p/tts7/1712/e8/b3726b2c912d2302.jpg_180x120_f95144d7.jpg',
-                 desc: '旅游景点'
-               },{
-                 id:'0008',
-                 imgUrl: 'https://imgs.qunarzz.com/p/tts7/1712/e8/b3726b2c912d2302.jpg_180x120_f95144d7.jpg',
-                 desc: '旅游景点'
-               },{
-                 id:'0009',
-                 imgUrl: 'https://imgs.qunarzz.com/p/tts7/1712/e8/b3726b2c912d2302.jpg_180x120_f95144d7.jpg',
-                 desc: '旅游景点'
-               }]
-           }
+       return{
+         swiperOption:{
+           autoplay: false
+         }
+       }
      },
      computed: {
          pages(){
